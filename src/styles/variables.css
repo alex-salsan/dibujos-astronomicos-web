@@ -1,0 +1,10 @@
+:root {
+  /* Colores modo cosmos */
+  --color-bg: #1a1e2e;
+  --color-surface: #212638;
+  --color-text: #e8e8f0;
+  --color-text-muted: #8b8fa8;
+  --color-accent: #4f98a3;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Raleway', sans-serif;
+}
