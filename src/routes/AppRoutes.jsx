@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
+import { Navbar } from '../components/Navbar/Navbar'
 
 const HomePage = lazy(() => import('../pages/Home/HomePage'))
 const GalleryPage = lazy(() => import('../pages/Gallery/GalleryPage'))
@@ -10,6 +11,7 @@ const AboutPage = lazy(() => import('../pages/About/AboutPage'))
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
+      <Navbar />
       <Suspense fallback={<div>Cargando...</div>}>
         <Routes>
           <Route path='/' element={<HomePage/>} />
