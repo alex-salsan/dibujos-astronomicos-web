@@ -45,3 +45,13 @@
     gap: var(--space-4);
 
 }
+
+.gallery-latest {
+    padding: var(--space-8);
+
+    .articles-grid{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-4);
+    }
+}

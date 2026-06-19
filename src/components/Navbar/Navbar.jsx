@@ -16,10 +16,10 @@ export const Navbar = () => {
         
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/gallery">Gallery</Link></li>
+            <li><Link to="/gallery">Galería</Link></li>
             <li><Link to="/caha">CAHA</Link></li>
-            <li><Link to="/how-i-do-it">How I Do It</Link></li>
-            <li><Link to="/about">About</Link></li>
+            <li><Link to="/how-i-do-it">Cómo lo hice</Link></li>
+            <li><Link to="/about">Sobre mí</Link></li>
           </ul>
         </div>
       </nav>
