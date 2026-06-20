@@ -8,7 +8,7 @@ export const Navbar = () => {
   
   return (
     <>
-      <nav className='navbar'>
+      <nav className={`navbar ${isHomePage ? 'navbar-transparent' : ''}`}>
         <div className='nav-container'>
           <div className="nav-logo">
             <Link to="/">Jesús Salado</Link>

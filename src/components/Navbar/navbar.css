@@ -6,6 +6,7 @@
      
     padding: 1rem 3rem;
     width: 100%;
+    height: var(--navbar-height);
     position: sticky;
     top: 0;
     
@@ -40,5 +41,11 @@
                 }
             }
         }
+    }
+
+    .navbar-trasparent {
+        background: transparent;
+        backdrop-filter: none;
+        border-bottom: none;
     }
 }
