@@ -1,57 +1,59 @@
-.hero {
-    height: 100vh;
-    margin-top:calc(-1 * var(--navbar-height));
-    background-size: cover;
-    background-position: center;
+.slides-container {
+    height: calc(100vh * 6- var(--navbar-height)); /* una pantalla por img */
+    margin-top: calc(-1 * var(--navbar-height));
 
-    position: relative;
-
-    display: flex;
-
-    .hero-overlay {
-        position: absolute;
+    .slides-sticky {
+        position: sticky;
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .slides-track {
+        display: flex;
+        height: 100vh;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .slide {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            flex-shrink: 0;
 
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
+}
 
-    .hero-content {
-        position: absolute;
-        bottom: var(--space-16);
-        left: var(--space-12);
-        z-index: 1;
-        text-align: center;
+.hero-content {
+    position: absolute;
+    bottom: var(--space-16);
+    left: var(--space-12);
+    z-index: 1;
 
-        h1{
-            font-size: var(--text-3xl);
-            font-family: var(--font-display);
-            color: var(--color-text);
-            margin-bottom: var(--space-4);
-        }
-
-        p {
-            font-size: var(--text-lg);
-            font-family: var(--font-body);
-            color: var(--color-text);
-        }
-
-        .hero-quote {
-            font-size: var(--text-base);
-            font-style: italic;
-        }
+    h1 {
+        font-size: var(--text-2xl);
+        font-family: var(--font-display);
+        color: var(--color-text);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: var(--space-4);
     }
+
+    .hero-quote {
+        font-size: var(--text-base);
+        font-family: var(--font-body);
+        color: var(--color-text);
+        font-style: italic;
+    }
+}
+
+.slide::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
 }
