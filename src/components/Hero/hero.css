@@ -1,5 +1,5 @@
 .slides-container {
-    height: calc(100vh * 6- var(--navbar-height)); /* una pantalla por img */
+    height: calc(100vh * 6 - var(--navbar-height)); /* una pantalla por img */
     margin-top: calc(-1 * var(--navbar-height));
 
     .slides-sticky {
