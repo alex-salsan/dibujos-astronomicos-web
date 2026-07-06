@@ -13,7 +13,7 @@ const slides = [
   { img: viaLactea, label: null, link: null },
   { img: luna, label: 'Galería', link: '/gallery' },
   { img: caha, label: 'CAHA', link: '/caha' },
-  { img: m42, label: null, link: null },
+  { img: m42, label: 'Galería', link: '/gallery' },
   { img: comoSeHizo, label: 'Cómo lo hice', link: '/how-i-do-it' },
   { img: sobreMi, label: 'Sobre mí', link: '/about' }
 ]
@@ -61,7 +61,7 @@ export const Hero = () => {
           {slides.map((slide, index) => (
             <div className="slide" key={index}>
               <img src={slide.img} alt={`Slide ${index + 1}`} />
-              
+
               {index === 0 && (
                 <div className="hero-content">
                   <h1>Jesús Salado Castro</h1>
@@ -70,7 +70,17 @@ export const Hero = () => {
               )}
 
               {slide.label && (
-                <Link to={slide.link} className="slide-label">{slide.label}</Link>
+                <div className="slide-label">
+                  {slide.label}
+                </div>
+              )}
+
+              {slide.link && (
+                <Link
+                  to={slide.link}
+                  className="slide-overlay-link"
+                  aria-label={`Ir a ${slide.label}`}
+                />
               )}
             </div>
           ))}
