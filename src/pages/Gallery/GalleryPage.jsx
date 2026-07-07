@@ -49,8 +49,14 @@ const articles = [
 const GalleryPage = () => {
   return (
     <div className="gallery">
-      <section className="gallery-categories">
+      <header className="gallery-header">
         <h1>Galería</h1>
+        <p>
+          Dibujos y observaciones organizados por categorías del cielo profundo.
+        </p>
+      </header>
+
+      <section className="gallery-categories">
         {categories.map((category) => (
           <div key={category.id} className='category-card'>
             <Link to={`/gallery/${category.slug}`}>
@@ -63,6 +69,10 @@ const GalleryPage = () => {
 
       <section className='gallery-latest'>
         <h2>Últimos artículos</h2>
+        <p>
+          Una selección reciente de dibujos y observaciones publicadas.
+        </p>
+
         <div className='articles-grid'>
           {articles.map((article) => (
             <ArticleCard key={article.id} article={article} />
