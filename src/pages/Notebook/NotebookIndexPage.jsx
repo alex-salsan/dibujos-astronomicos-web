@@ -1,6 +1,4 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArticleCard } from '../../components/ArticleCard/ArticleCard'
 import './notebook.css'
 
 const categories = [
@@ -11,44 +9,21 @@ const categories = [
   { id: 5, name: 'Otros', slug: 'otros' },
 ]
 
-const articles = [
-  { id: 1, title: 'Título del artículo 1', date: '12 de junio, 2025' },
-  { id: 2, title: 'Título del artículo 2', date: '13 de junio, 2025' },
-  { id: 3, title: 'Título del artículo 3', date: '14 de junio, 2025' },
-]
-
 const NotebookIndexPage = () => {
   return (
-    <div className="notebook">
-      <header className="notebook-header">
-        <h1>Cuaderno de campo</h1>
-        <p>
-          Dibujos y observaciones organizados por categorías del cielo profundo.
-        </p>
+    <div className="notebook-index">
+      <header className="notebook-index-header">
+        <h1>Cuaderno de Campo</h1>
+        <p>Catálogo de objetos del cielo profundo y planetarias.</p>
       </header>
 
-      <section className="notebook-categories">
-        {categories.map((category) => (
-          <div key={category.id} className='category-card'>
-            <Link to={`/notebook/${category.slug}`}>
-              <h3>{category.name}</h3>
-            </Link>
-          </div>
+      <div className="notebook-index-grid">
+        {categories.map(cat => (
+          <Link key={cat.id} to={`/notebook/${cat.slug}`} className="notebook-index-card">
+            {cat.name}
+          </Link>
         ))}
-      </section>
-
-      <section className='notebook-latest'>
-        <h2>Últimos artículos</h2>
-        <p>
-          Una selección reciente de dibujos y observaciones publicadas.
-        </p>
-
-        <div className='articles-grid'>
-          {articles.map((article) => (
-            <ArticleCard key={article.id} article={article} />
-          ))}
-        </div>
-      </section>
+      </div>
     </div>
   )
 }
