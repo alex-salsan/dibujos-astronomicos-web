@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import './hero.css'
 
@@ -11,9 +11,9 @@ import sobreMi from '../../assets/images/SobreMi.jpg'
 
 const slides = [
   { img: viaLactea, label: null, link: null },
-  { img: luna, label: 'Galería', link: '/gallery' },
+  { img: luna, label: 'Cuaderno de campo', link: '/gallery' },
   { img: caha, label: 'CAHA', link: '/caha' },
-  { img: m42, label: 'Galería', link: '/gallery' },
+  { img: m42, label: 'Cuaderno de campo', link: '/gallery' },
   { img: comoSeHizo, label: 'Cómo lo hice', link: '/how-i-do-it' },
   { img: sobreMi, label: 'Sobre mí', link: '/about' }
 ]
