@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArticleCard } from '../../components/ArticleCard/ArticleCard'
-import './Notebook.css'
+import './notebook.css'
 
 const categories = [
   { id: 1, name: 'Nebulosas', slug: 'nebulosas' },

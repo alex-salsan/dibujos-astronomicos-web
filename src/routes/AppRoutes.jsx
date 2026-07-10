@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react'
 import { Navbar } from '../components/Navbar/Navbar'
 
 const HomePage = lazy(() => import('../pages/Home/HomePage'))
-const NotebookIndexPage = lazy(() => import('../pages/notebook/notebookIndexPage'))
+const NotebookIndexPage = lazy(() => import('../pages/notebook/NotebookIndexPage'))
 const NotebookCategoryPage = lazy(() => import('../pages/NotebookCategory/NotebookCategoryPage'))
 const CahaPage = lazy(() => import('../pages/Caha/CahaPage'))
 const HowIDoItPage = lazy(() => import('../pages/HowIDoIt/HowIDoItPage'))
