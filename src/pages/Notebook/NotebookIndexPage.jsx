@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArticleCard } from '../../components/ArticleCard/ArticleCard'
-import './gallery.css'
+import './Notebook.css'
 
 const categories = [
   { id: 1, name: 'Nebulosas', slug: 'nebulosas' },
@@ -17,27 +17,27 @@ const articles = [
   { id: 3, title: 'Título del artículo 3', date: '14 de junio, 2025' },
 ]
 
-const GalleryIndexPage = () => {
+const NotebookIndexPage = () => {
   return (
-    <div className="gallery">
-      <header className="gallery-header">
+    <div className="notebook">
+      <header className="notebook-header">
         <h1>Cuaderno de campo</h1>
         <p>
           Dibujos y observaciones organizados por categorías del cielo profundo.
         </p>
       </header>
 
-      <section className="gallery-categories">
+      <section className="notebook-categories">
         {categories.map((category) => (
           <div key={category.id} className='category-card'>
-            <Link to={`/gallery/${category.slug}`}>
+            <Link to={`/notebook/${category.slug}`}>
               <h3>{category.name}</h3>
             </Link>
           </div>
         ))}
       </section>
 
-      <section className='gallery-latest'>
+      <section className='notebook-latest'>
         <h2>Últimos artículos</h2>
         <p>
           Una selección reciente de dibujos y observaciones publicadas.
@@ -53,4 +53,4 @@ const GalleryIndexPage = () => {
   )
 }
 
-export default GalleryIndexPage
+export default NotebookIndexPage

@@ -39,7 +39,7 @@ export const Navbar = () => {
           ) : (
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/gallery">Cuaderno de campo</Link></li>
+              <li><Link to="/notebook">Cuaderno de campo</Link></li>
               <li><Link to="/blog">Dibujos recientes / Blog</Link></li>
               <li><Link to="/how-i-do-it">Miscelánea</Link></li>
               <li><Link to="/art">Arte</Link></li>
@@ -59,7 +59,7 @@ export const Navbar = () => {
           <button onClick={() => setMenuOpen(false)}>✕</button>
           <ul>
             <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-            <li><Link to="/gallery" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
+            <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
             <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Dibujos recientes / Blog</Link></li>
             <li><Link to="/how-i-do-it" onClick={() => setMenuOpen(false)}>Miscelánea</Link></li>
             <li><Link to="/art" onClick={() => setMenuOpen(false)}>Arte</Link></li>

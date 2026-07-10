@@ -48,13 +48,13 @@
   }
 }
 
-.gallery {
+.notebook {
   max-width: 1200px;
   margin-inline: auto;
   padding-inline: var(--space-8);
 }
 
-.gallery-header {
+.notebook-header {
   padding: var(--space-8);
 
   h1 {
@@ -70,14 +70,14 @@
   }
 }
 
-.gallery-categories {
+.notebook-categories {
   padding: var(--space-8);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-4);
 }
 
-.gallery-latest {
+.notebook-latest {
   padding: var(--space-8);
 
   h2 {
