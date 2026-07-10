@@ -46,7 +46,7 @@ const NotebookCategoryPage = ({ category }) => {
             const isActive = cat.slug === category
             return (
               <li key={cat.id} className={isActive ? 'is-active' : ''}>
-                <Link to={`/gallery/${cat.slug}`}>
+                <Link to={`/notebook/${cat.slug}`}>
                   {cat.name}
                 </Link>
               </li>
@@ -75,9 +75,9 @@ const NotebookCategoryPage = ({ category }) => {
               <p className="notebook-article-summary">
                 {article.summary}
               </p>
-              <button className="notebook-article-link">
+              <Link className="notebook-article-link">
                 Ver detalle
-              </button>
+              </Link>
             </article>
           ))}
         </section>

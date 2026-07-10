@@ -35,7 +35,7 @@ export const Navbar = () => {
           </div>
 
           {isHomePage ? (
-            <button onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+            <Link onClick={() => setMenuOpen(!menuOpen)}>☰</Link>
           ) : (
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
@@ -56,7 +56,7 @@ export const Navbar = () => {
 
       {isHomePage && (
         <div className={`menu-panel ${menuOpen ? 'menu-panel-open' : ''}`}>
-          <button onClick={() => setMenuOpen(false)}>✕</button>
+          <Link onClick={() => setMenuOpen(false)}>✕</Link>
           <ul>
             <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
             <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
