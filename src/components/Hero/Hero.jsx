@@ -23,15 +23,10 @@ export const Hero = () => {
   const trackRef = useRef(null);
 
   useEffect(() => {
-    console.log('useEffect ejecutado')  // ← añade esto
       const handleScroll = () => {
-        console.log('scroll detectado')
 
           const container = containerRef.current
           const track = trackRef.current
-
-          console.log('scrollY:', window.scrollY)
-          console.log('rect.top:', container?.getBoundingClientRect().top)
 
           if (!container || !track) return
 

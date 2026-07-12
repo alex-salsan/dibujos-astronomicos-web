@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import './notebook-layout.css'
+import './notebook-category.css'
 
 const categories = [
   { id: 1, name: 'Nebulosas', slug: 'nebulosas' },
