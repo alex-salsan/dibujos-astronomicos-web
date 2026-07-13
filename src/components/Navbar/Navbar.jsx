@@ -18,8 +18,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
-
   return (
     <>
       <nav
@@ -35,15 +33,15 @@ export const Navbar = () => {
           </div>
 
           {isHomePage ? (
-            <Link onClick={() => setMenuOpen(!menuOpen)}>☰</Link>
+            <Link onClick={() => setMenuOpen(!menuOpen)}>Menú ☰</Link>
           ) : (
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/notebook">Cuaderno de campo</Link></li>
-              <li><Link to="/blog">Dibujos recientes / Blog</Link></li>
+              {/* <li><Link to="/blog">Dibujos recientes / Blog</Link></li>
               <li><Link to="/how-i-do-it">Miscelánea</Link></li>
               <li><Link to="/art">Arte</Link></li>
-              <li><Link to="/nature">Naturaleza</Link></li>
+              <li><Link to="/nature">Naturaleza</Link></li> */}
               <li><Link to="/contact">Contacto</Link></li>
             </ul>
           )}
@@ -56,14 +54,14 @@ export const Navbar = () => {
 
       {isHomePage && (
         <div className={`menu-panel ${menuOpen ? 'menu-panel-open' : ''}`}>
-          <Link onClick={() => setMenuOpen(false)}>✕</Link>
+          <Link className="menu-close" onClick={() => setMenuOpen(false)}>✕</Link>
           <ul>
             <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
             <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
-            <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Dibujos recientes / Blog</Link></li>
+            {/* <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Dibujos recientes / Blog</Link></li>
             <li><Link to="/how-i-do-it" onClick={() => setMenuOpen(false)}>Miscelánea</Link></li>
             <li><Link to="/art" onClick={() => setMenuOpen(false)}>Arte</Link></li>
-            <li><Link to="/nature" onClick={() => setMenuOpen(false)}>Naturaleza</Link></li>
+            <li><Link to="/nature" onClick={() => setMenuOpen(false)}>Naturaleza</Link></li> */}
             <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
           </ul>
         </div>
