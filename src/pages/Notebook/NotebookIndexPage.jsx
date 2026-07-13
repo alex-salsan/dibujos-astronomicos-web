@@ -44,6 +44,7 @@ const NotebookIndexPage = () => {
               to={`/notebook/${article.category}/${article.slug}`}
               className="category-card"
             >
+              <img src={article.image} alt={article.title} />
               <h3>{article.title}</h3>
             </Link>
           ))}

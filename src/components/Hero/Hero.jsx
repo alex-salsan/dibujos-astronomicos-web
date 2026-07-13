@@ -21,33 +21,49 @@ const slides = [
 export const Hero = () => {
   const containerRef = useRef(null);
   const trackRef = useRef(null);
+  
+  useEffect(() => {
+    document.body.classList.add('no-scrollbar')
+    return () => {
+      document.body.classList.remove('no-scrollbar')
+    }
+  }, [])
 
   useEffect(() => {
-      const handleScroll = () => {
+    const handleScroll = () => {
+      const container = containerRef.current
+      if (!container) return
 
-          const container = containerRef.current
-          const track = trackRef.current
+      const rect = container.getBoundingClientRect()
+      const scrolled = -rect.top
+      const maxScroll = container.offsetHeight - window.innerHeight
 
-          if (!container || !track) return
+      if (scrolled < 0 || scrolled > maxScroll) return
 
-          const rect = container.getBoundingClientRect()
-          const scrolled = -rect.top
-          const maxScroll = container.offsetHeight - window.innerHeight
+      const progress = scrolled / maxScroll
+      const totalTransitions = slides.length - 1
+      const slideEls = container.querySelectorAll('.slide')
 
-          if (scrolled < 0 || scrolled > maxScroll) return
+      slideEls.forEach((el, index) => {
+        if (index === 0) {
+          el.style.transform = 'translateX(0)'
+          return
+        }
 
-          const progress = scrolled / maxScroll
-          const maxTranslate = (slides.length - 1) * window.innerWidth
+        const slideProgress = progress * totalTransitions - (index - 1)
+        const clamped = Math.min(Math.max(slideProgress, 0), 1)
+        el.style.transform = `translateX(${(1 - clamped) * 100}%)`
+      })
+    }
 
-          track.style.transform = `translateX(-${progress * maxTranslate}px)`
-      }
+    handleScroll()
 
-        document.addEventListener('scroll', handleScroll)
-
-      return () => {
-        document.removeEventListener('scroll', handleScroll)
-      }
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
   }, [])
+
 
   return (
     <section ref={containerRef} className="slides-container">
