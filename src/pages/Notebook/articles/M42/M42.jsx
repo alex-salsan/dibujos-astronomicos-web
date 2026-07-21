@@ -1,5 +1,5 @@
 
-import './m42.css'
+import './M42.css'
 
 const M42 = () => {
   return (
