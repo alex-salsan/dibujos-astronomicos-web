@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 import { Navbar } from '../components/Navbar/Navbar'
+import { ScrollToTop } from '../components/ScrollToTop/ScrollToTop'
 
 const HomePage = lazy(() => import('../pages/Home/HomePage'))
 const NotebookIndexPage = lazy(() => import('../pages/Notebook/NotebookIndexPage'))
@@ -11,8 +12,10 @@ const HowIDoItPage = lazy(() => import('../pages/HowIDoIt/HowIDoItPage'))
 const AboutPage = lazy(() => import('../pages/About/AboutPage'))
 
 export const AppRoutes = () => {
+
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Suspense fallback={<div>Cargando...</div>}>
         <Routes>

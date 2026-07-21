@@ -155,9 +155,9 @@
 
     .notebook-sidebar {
       position: sticky;
-      top: var(--navbar-height);
+      top: calc(var(--navbar-height) + var(--space-8));
       align-self: start;
-      max-height: calc(100vh - var(--navbar-height));
+      max-height: calc(100vh - var(--navbar-height) - var(--space-8));
       overflow-y: auto;
     }
   }
