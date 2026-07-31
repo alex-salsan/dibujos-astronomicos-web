@@ -36,7 +36,7 @@ export const Navbar = () => {
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/notebook">Cuaderno de campo</Link></li>
-              <li><Link to="/contact">Contacto</Link></li>
+              <li><Link to="/about">Contacto</Link></li>
             </ul>
           )}
 
@@ -59,7 +59,7 @@ export const Navbar = () => {
         <ul>
           <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
           <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
-          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
+          <li><Link to="/about" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
         </ul>
       </div>
     </>

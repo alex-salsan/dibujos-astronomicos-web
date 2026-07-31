@@ -1,0 +1,226 @@
+.article-content {
+  .article-header h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+  }
+
+  .article-meta {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-6);
+  }
+
+  .article-image {
+    width: 50%;
+    display: block;
+    margin-inline: auto;
+    border-radius: 0.5rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .article-intro {
+    .article-intro-label {
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+    }
+
+    p {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      margin-bottom: var(--space-6);
+
+      &:last-child {
+        margin-bottom: var(--space-8);
+      }
+    }
+  }
+
+  .article-section {
+    margin-bottom: var(--space-8);
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-4);
+    }
+
+    h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3);
+    }
+
+    h4 {
+      font-family: var(--font-display);
+      font-size: var(--text-base);
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+
+    p {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: var(--space-6);
+    }
+  }
+
+  .article-figure {
+    text-align: center;
+    margin-bottom: var(--space-6);
+
+    img {
+      width: 80%;
+      max-width: 80%;
+      height: auto;
+      display: block;
+      margin-inline: auto;
+      border-radius: 0.5rem;
+    }
+
+    figcaption {
+      font-size: var(--text-quote);
+      color: var(--color-text-muted);
+      margin-top: var(--space-2);
+    }
+  }
+
+  .article-notes {
+    margin-bottom: var(--space-8);
+
+    h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-3);
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: var(--space-6);
+    }
+
+    li {
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: var(--space-2);
+    }
+  }
+
+  .article-list {
+    list-style: disc;
+    padding-left: var(--space-6);
+
+    li {
+      font-size: var(--text-base);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: var(--space-2);
+    }
+  }
+
+  .article-source {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-2);
+
+    a {
+      color: var(--color-accent);
+      text-decoration: underline;
+    }
+  }
+
+  .article-caption {
+    font-size: var(--text-quote);
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .article-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--space-4);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    text-align: right;
+  }
+}
+
+.probability-box {
+  text-align: center;
+  border: 1px solid var(--color-accent);
+  border-radius: 0.75rem;
+  max-width: 32rem;
+  margin-inline: auto;
+  margin-bottom: var(--space-8);
+  padding: var(--space-6);
+  background: var(--color-surface);
+
+  .probability-box-title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-3);
+  }
+
+  .probability-box-value {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    color: var(--color-accent);
+    margin: var(--space-4) 0;
+  }
+
+  p {
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+}
+
+/* Responsive tablet */
+@media (max-width: 768px) {
+  .article-content {
+    padding-inline: var(--space-4);
+  }
+
+  .article-image,
+  .article-figure img {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .probability-box {
+    max-width: 100%;
+    padding: var(--space-4);
+  }
+}
+
+/* Responsive tlf */
+@media (max-width: 480px) {
+  .article-content {
+    padding-inline: 0.75rem;
+  }
+
+  .article-header h1 {
+    font-size: var(--text-lg);
+  }
+
+  .article-image,
+  .article-figure img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .article-intro p {
+    font-size: var(--text-base);
+  }
+
+  .probability-box {
+    padding: 0.75rem;
+  }
+
+  .probability-box-value {
+    font-size: var(--text-xl);
+  }
+}

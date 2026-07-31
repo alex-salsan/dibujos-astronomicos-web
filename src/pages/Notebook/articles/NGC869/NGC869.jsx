@@ -1,8 +1,9 @@
-import './ngc869.css'
+import '../../../../styles/article.css'
+// import './ngc869.css'
 
 const NGC869 = () => {
   return (
-    <article className="article-ngc869">
+    <article className="article-content">
       <header className="article-header">
         <h1>NGC 869, una singularidad estelar en el corazón de Perseo</h1>
         <p className="article-meta">Junio de 2025 · CAHA, telescopio de 1,23 m</p>

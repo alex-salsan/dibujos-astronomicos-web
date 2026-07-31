@@ -12,9 +12,9 @@ import sobreMi from '../../assets/images/SobreMi.jpg'
 const slides = [
   { img: viaLactea, label: null, link: null },
   { img: luna, label: 'Cuaderno de campo', link: '/notebook' },
-  { img: caha, label: 'CAHA', link: '/caha' },
+  { img: caha, label: 'CAHA', link: 'https://www.caha.es' },
   { img: m42, label: 'Cuaderno de campo', link: '/notebook' },
-  { img: comoSeHizo, label: 'Cómo lo hice', link: '/how-i-do-it' },
+  { img: comoSeHizo, label: 'Cómo lo hice', link: '/notebook' },
   { img: sobreMi, label: 'Sobre mí', link: '/about' }
 ]
 

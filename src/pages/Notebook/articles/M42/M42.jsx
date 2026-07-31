@@ -1,8 +1,9 @@
+import '../../../../styles/article.css'
 import './M42.css'
 
 const M42 = () => {
   return (
-    <article className="article-ngc869">
+    <article className="article-content">
       <header className="article-header">
         <h1>M42, la gran nebulosa de Orión desde el telescopio de 1,23 m del CAHA</h1>
         <p className="article-meta">Diciembre de 2023 · CAHA, telescopio de 1,23 m</p>
