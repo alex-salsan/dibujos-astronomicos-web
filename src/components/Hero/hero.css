@@ -126,3 +126,30 @@ body.no-scrollbar::-webkit-scrollbar {
   inset: 0;
   z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .hero-content {
+    left: var(--space-6);
+    bottom: var(--space-8);
+  }
+
+  .slide-label {
+    left: var(--space-4);
+    bottom: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    left: var(--space-4);
+    bottom: var(--space-6);
+  }
+
+  .hero-content h1 {
+    letter-spacing: 0.05em;
+  }
+
+  .slide-label {
+    letter-spacing: 0.08rem;
+  }
+}

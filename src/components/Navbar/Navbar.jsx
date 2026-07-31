@@ -9,14 +9,14 @@ export const Navbar = () => {
 
   const isHomePage = location.pathname === '/';
 
-  useEffect (() => {
+  useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 80)
-    }
+      setScrolled(window.scrollY > 80);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -27,45 +27,41 @@ export const Navbar = () => {
            ${scrolled ? 'navbar-scrolled' : ''}`
         }
       >
-        <div className='nav-container'>
+        <div className="nav-container">
           <div className="nav-logo">
             <Link to="/">Jesús Salado</Link>
           </div>
 
-          {isHomePage ? (
-            <Link onClick={() => setMenuOpen(!menuOpen)}>Menú ☰</Link>
-          ) : (
+          {!isHomePage && (
             <ul className="nav-links">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/notebook">Cuaderno de campo</Link></li>
-              {/* <li><Link to="/blog">Dibujos recientes / Blog</Link></li>
-              <li><Link to="/how-i-do-it">Miscelánea</Link></li>
-              <li><Link to="/art">Arte</Link></li>
-              <li><Link to="/nature">Naturaleza</Link></li> */}
               <li><Link to="/contact">Contacto</Link></li>
             </ul>
           )}
+
+          <button
+            className={`nav-toggle ${isHomePage ? 'nav-toggle-always' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Abrir menú"
+          >
+            ☰
+          </button>
         </div>
       </nav>
 
-      {isHomePage && menuOpen && (
-        <div className='menu-overlay' onClick={() => setMenuOpen(false)}></div>
+      {menuOpen && (
+        <div className="menu-overlay" onClick={() => setMenuOpen(false)}></div>
       )}
 
-      {isHomePage && (
-        <div className={`menu-panel ${menuOpen ? 'menu-panel-open' : ''}`}>
-          <Link className="menu-close" onClick={() => setMenuOpen(false)}>✕</Link>
-          <ul>
-            <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
-            <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
-            {/* <li><Link to="/blog" onClick={() => setMenuOpen(false)}>Dibujos recientes / Blog</Link></li>
-            <li><Link to="/how-i-do-it" onClick={() => setMenuOpen(false)}>Miscelánea</Link></li>
-            <li><Link to="/art" onClick={() => setMenuOpen(false)}>Arte</Link></li>
-            <li><Link to="/nature" onClick={() => setMenuOpen(false)}>Naturaleza</Link></li> */}
-            <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
-          </ul>
-        </div>
-      )}
+      <div className={`menu-panel ${menuOpen ? 'menu-panel-open' : ''}`}>
+        <Link className="menu-close" onClick={() => setMenuOpen(false)}>✕</Link>
+        <ul>
+          <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
+          <li><Link to="/notebook" onClick={() => setMenuOpen(false)}>Cuaderno de campo</Link></li>
+          <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
+        </ul>
+      </div>
     </>
-  )
-}
+  );
+};

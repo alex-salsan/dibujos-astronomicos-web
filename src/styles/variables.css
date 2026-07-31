@@ -25,3 +25,9 @@
 
   --navbar-height: 60px;
 }
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 52px;
+  }
+}

@@ -119,3 +119,49 @@
 .menu-panel.menu-panel-open {
   transform: translateX(0);
 }
+
+/* Botón hamburguesa: oculto en escritorio */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Forzado: en el Hero siempre se ve el hamburguesa, sea cual sea el ancho */
+.nav-toggle.nav-toggle-always {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .navbar.navbar-scrolled {
+    padding: 0.5rem 1.25rem;
+  }
+
+  .navbar .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-panel {
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+
+  .menu-panel .menu-close {
+    top: 1rem;
+    right: 1.25rem;
+  }
+}
