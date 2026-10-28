@@ -1,4 +1,3 @@
-import React from 'react'
 import './articleCard.css'
 
 export const ArticleCard = ({article}) => {
