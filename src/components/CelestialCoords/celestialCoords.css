@@ -1,0 +1,105 @@
+.celestial-coords {
+  --progress: 0;
+
+  position: absolute;
+  right: var(--space-8);
+  bottom: var(--space-8);
+  z-index: 30;
+  min-width: 14rem;
+  pointer-events: none;
+
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+.cc-target {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-style: italic;
+  letter-spacing: 0.04em;
+  transition: opacity 0.3s ease;
+}
+
+/* Piloto del telescopio: fijo al seguir un objeto, parpadea al moverse */
+.cc-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 6px var(--color-accent);
+}
+
+.cc-row {
+  display: flex;
+  gap: var(--space-4);
+
+  .cc-key {
+    width: 2.25rem;
+    color: var(--color-text-muted);
+  }
+}
+
+.cc-track {
+  position: relative;
+  height: 1px;
+  margin-top: var(--space-4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cc-tick {
+  position: absolute;
+  top: -3px;
+  width: 1px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.cc-bar {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--progress) * 100%);
+  background: var(--color-text);
+}
+
+.celestial-coords.is-slewing {
+  .cc-status {
+    background: #ff4d4d;
+    box-shadow: 0 0 8px #ff4d4d;
+    animation: cc-blink 0.6s steps(2, jump-none) infinite;
+  }
+
+  .cc-target {
+    opacity: 0.6;
+  }
+}
+
+@keyframes cc-blink {
+  from { opacity: 1; }
+  to { opacity: 0.2; }
+}
+
+@media (max-width: 899px) {
+  .celestial-coords {
+    position: fixed;
+    top: calc(var(--navbar-height) + var(--space-4));
+    right: var(--space-4);
+    bottom: auto;
+    min-width: 0;
+    font-size: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celestial-coords.is-slewing .cc-status {
+    animation: none;
+  }
+}
