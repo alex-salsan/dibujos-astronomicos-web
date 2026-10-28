@@ -10,6 +10,7 @@ const NotebookArticlePage = lazy(() => import('../pages/Notebook/NotebookArticle
 const CahaPage = lazy(() => import('../pages/Caha/CahaPage'))
 const HowIDoItPage = lazy(() => import('../pages/HowIDoIt/HowIDoItPage'))
 const AboutPage = lazy(() => import('../pages/About/AboutPage'))
+const NotFoundPage = lazy(() => import('../pages/NotFound/NotFoundPage'))
 
 export const AppRoutes = () => {
 
@@ -26,6 +27,7 @@ export const AppRoutes = () => {
           <Route path='/caha' element={<CahaPage />} />
           <Route path='/how-i-do-it' element={<HowIDoItPage />} />
           <Route path='/about' element={<AboutPage />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

@@ -1,8 +1,21 @@
 # Jesús Salado · Dibujo astronómico
 
-Web de los dibujos astronómicos de **Jesús Salado Castro**: observaciones del cielo dibujadas a mano, desde el patio de casa hasta el telescopio de 1,23 m del Observatorio de Calar Alto (CAHA).
+Web de los dibujos astronómicos de **Jesús Salado Castro**: observaciones del cielo dibujadas a mano, desde el patio de casa hasta el telescopio de 1,23 m del Observatorio de Calar Alto (CAHA). Proyecto real para un cliente, desarrollado desde cero: desde la toma de requisitos hasta el despliegue.
 
 🔭 **[dibujoastronomico-jesussalado.vercel.app](https://dibujoastronomico-jesussalado.vercel.app)**
+
+![Portada de la web](docs/screenshots/portada.webp)
+
+<table>
+  <tr>
+    <td><img src="docs/screenshots/laminas.webp" alt="Láminas de la portada con scroll horizontal" /></td>
+    <td><img src="docs/screenshots/cuaderno.webp" alt="Cuaderno de campo por categorías" /></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/articulo.webp" alt="Artículo de una observación" /></td>
+    <td align="center"><img src="docs/screenshots/movil.webp" alt="Portada en móvil" width="220" /></td>
+  </tr>
+</table>
 
 ## Qué incluye
 
@@ -10,6 +23,13 @@ Web de los dibujos astronómicos de **Jesús Salado Castro**: observaciones del 
 - **Indicador de coordenadas celestes:** muestra la ascensión recta y la declinación del objeto que está en pantalla, y las va girando al pasar de uno a otro, como un telescopio apuntando.
 - **Cuaderno de campo:** catálogo de observaciones por categoría (nebulosas, galaxias, cúmulos, planetarias…) con un artículo detallado para cada dibujo.
 - **Diseño adaptado** a escritorio, tablet y móvil, y con respeto a la preferencia de reducir animaciones.
+
+## Detalles técnicos
+
+- **Scroll horizontal sin librerías** (`useHorizontalStrip`): convierte el scroll vertical en desplazamiento horizontal con interpolación por frame (`requestAnimationFrame`), y añade arrastre con inercia al soltar, navegación con teclado y gestos de trackpad. Distingue un arrastre de un clic para no abrir enlaces por accidente.
+- **Coordenadas que "giran" como un telescopio** (`CelestialCoords`): interpola la ascensión recta y la declinación entre objetos, toma el camino más corto en ascensión recta (que da la vuelta en 24 h) y actualiza el DOM directamente para no provocar un render de React en cada frame.
+- **Carga bajo demanda**: cada página y cada artículo del cuaderno es un chunk independiente (`React.lazy`), así que la portada no descarga el contenido del resto.
+- **Contenido separado del código**: las láminas de la home y las fichas del cuaderno viven en `src/data/`, lo que permite añadir observaciones sin tocar los componentes.
 
 ## Tecnologías
 
@@ -68,6 +88,6 @@ Se editan en `src/data/homeSlides.js`: imagen, título, etiqueta, enlace y coord
 ## Autoría
 
 Dibujos y textos: **Jesús Salado Castro**.
-Desarrollo web: **Alejandro Salado**.
+Diseño y desarrollo web: **Alejandro Salado Sánchez** · [Portfolio](URL_DEL_PORTFOLIO) · [LinkedIn](https://www.linkedin.com/in/alejandro-salado/) · [GitHub](https://github.com/alex-salsan)
 
 Las imágenes de los dibujos pertenecen a su autor y no deben reutilizarse sin permiso.
