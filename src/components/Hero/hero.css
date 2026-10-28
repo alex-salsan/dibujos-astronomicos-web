@@ -7,11 +7,6 @@ body.no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* La home va sobre negro puro, también en el rebote del scroll */
-body:has(.strip) {
-  background-color: #000;
-}
-
 /* La altura la calcula useHorizontalStrip según el ancho de la tira */
 .strip {
   --strip-x: 0;
@@ -19,7 +14,7 @@ body:has(.strip) {
   --line: rgba(255, 255, 255, 0.1);
 
   margin-top: calc(-1 * var(--navbar-height));
-  background: #000;
+  background: var(--color-bg);
 }
 
 .strip-sticky {
@@ -180,7 +175,7 @@ body:has(.strip) {
   flex: none;
   height: 100%;
   border-left: 1px solid var(--line);
-  background: #000;
+  background: var(--color-bg);
 
   /* Brillo suave al pasar el ratón */
   &::before {
@@ -236,7 +231,7 @@ body:has(.strip) {
   width: var(--media-w);
   height: var(--media-h);
   overflow: hidden;
-  background: #0a0a0a;
+  background: var(--color-surface);
 
   img {
     width: 100%;
@@ -279,7 +274,7 @@ body:has(.strip) {
   flex: none;
   height: 100%;
   border-left: 1px solid var(--line);
-  background: #000;
+  background: var(--color-bg);
 }
 
 /* ---------- Animaciones ---------- */
